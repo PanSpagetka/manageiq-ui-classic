@@ -13,7 +13,9 @@ import FlavorForm from '../components/flavor-form/flavor-form';
 import ImportDatastoreViaGit from '../components/automate-import-export-form/import-datastore-via-git';
 import VmServerRelationshipForm from '../components/vm-server-relationship-form';
 import CatalogForm from '../components/catalog-form/catalog-form';
-
+import { taggingApp } from '@manageiq/react-ui-components/dist/tagging';
+import TaggingWrapper from '../components/taggingWrapper'
+import '@manageiq/react-ui-components/dist/tagging.css';
 /**
 * Add component definitions to this file.
 * example of component definition:
@@ -36,3 +38,4 @@ ManageIQ.component.addReact('FlavorForm', FlavorForm);
 ManageIQ.component.addReact('ImportDatastoreViaGit', ImportDatastoreViaGit);
 ManageIQ.component.addReact('VmServerRelationshipForm', VmServerRelationshipForm);
 ManageIQ.component.addReact('CatalogForm', CatalogForm);
+ManageIQ.component.addReact('TaggingWrapper', TaggingWrapper);
