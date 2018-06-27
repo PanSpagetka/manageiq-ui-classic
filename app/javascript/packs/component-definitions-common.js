@@ -1,4 +1,5 @@
 import React from 'react';
+import 'react-select/dist/react-select.css';
 import { TagGroup, TableListView, GenericGroup } from '@manageiq/react-ui-components/dist/textual_summary';
 import TextualSummaryWrapper from '../react/textual_summary_wrapper';
 import TableListViewWrapper from '../react/table_list_view_wrapper';
@@ -15,7 +16,7 @@ import VmServerRelationshipForm from '../components/vm-server-relationship-form'
 import CatalogForm from '../components/catalog-form/catalog-form';
 import { taggingApp } from '@manageiq/react-ui-components/dist/tagging';
 import TaggingWrapper from '../components/taggingWrapper'
-import '@manageiq/react-ui-components/dist/tagging.css';
+
 /**
 * Add component definitions to this file.
 * example of component definition:
