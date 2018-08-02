@@ -271,11 +271,12 @@ describe OpsController do
       it "builds tagging screen" do
         EvmSpecHelper.create_guid_miq_server_zone
 
+        allow(controller).to receive(:button_url).with("ops", @tenant.id, "save").and_return("save_url")
+        allow(controller).to receive(:button_url).with("ops", @tenant.id, "cancel").and_return("cancel_url")
         controller.instance_variable_set(:@sb, :action => "rbac_tenant_tags_edit")
         controller.instance_variable_set(:@_params, :miq_grid_checks => @tenant.id.to_s)
         controller.send(:rbac_tenant_tags_edit)
         expect(assigns(:flash_array)).to be_nil
-        expect(assigns(:entries)).not_to be_nil
       end
 
       it "cancels tags edit" do
@@ -286,10 +287,11 @@ describe OpsController do
       end
 
       it "resets tags edit" do
+        allow(controller).to receive(:button_url).with("ops", @tenant.id, "save").and_return("save_url")
+        allow(controller).to receive(:button_url).with("ops", @tenant.id, "cancel").and_return("cancel_url")
         controller.instance_variable_set(:@_params, :button => "reset", :id => @tenant.id)
         controller.send(:rbac_tenant_tags_edit)
         expect(assigns(:flash_array).first[:message]).to include("All changes have been reset")
-        expect(assigns(:entries)).not_to be_nil
       end
 
       it "save tags" do
